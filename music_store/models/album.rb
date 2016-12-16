@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Album
 
-  attr_accessor :title, :quantity; :genre, :artist_id
+  attr_accessor :title, :quantity, :genre, :artist_id
   attr_reader :id
 
   def initialize(options)
@@ -35,9 +35,9 @@ class Album
     sql =
     "
     INSERT INTO albums
-    (title, quantity, genre, artist_id)
+    (title, quantity, genre)
     VALUES
-    ('#{@title}', #{@quantity} '#{@genre}', #{@artist_id})
+    ('#{@title}', #{@quantity}, '#{@genre}')
     RETURNING *;
     "
     result = SQLRunner.run(sql)
@@ -62,7 +62,7 @@ class Album
 
   def self.delete_all
     sql = "DELETE FROM albums"
-    SqlRunner.run( sql )
+    SQLRunner.run(sql)
   end
 
 end
