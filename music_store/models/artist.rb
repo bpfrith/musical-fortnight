@@ -1,9 +1,5 @@
 require_relative( '../db/sql_runner' )
 
-require('pg')
-require_relative('album.rb')
-require_relative('sql_runner.rb')
-
 class Artist
 
   attr_accessor :name
@@ -50,6 +46,16 @@ class Artist
     ;"
     result = SQLRunner.run(sql)
     return result
+  end
+
+  def delete()
+    sql = "DELETE FROM artists WHERE id = {@id}"
+    SQLRunner.run(sql)
+  end
+
+  def self.delete_all
+    sql = "DELETE FROM artists"
+    SqlRunner.run( sql )
   end
 
   def self.find(id)
