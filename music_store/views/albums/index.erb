@@ -1,0 +1,20 @@
+<h1>Albums</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th>Quantity</th>
+    <th></th>
+    <th>Genre</th>
+  </tr>
+  <% for album in @albums %>
+  <tr>
+    <td><%= album.title %></td>
+    <td>|</td>
+    <td><%= album.quantity %></td>
+    <td>|</td>
+    <td><%= albume.genre %></td>
+  </tr>
+  <% end %>
+</table>
