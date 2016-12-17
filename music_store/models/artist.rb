@@ -1,4 +1,4 @@
-require_relative( '../db/sql_runner' )
+require_relative( '../dB/sql_runner' )
 
 class Artist
 
@@ -22,12 +22,6 @@ class Artist
   #   return albums.map { |album| Album.new(album) }
   # end
 
-  def self.all()
-    sql = "SELECT * FROM artists;"
-    artists = SQLRunner.run(sql)
-    return artists.map { |artist| Artist.new(artist) }
-  end
-
   def save()
     sql =
     "
@@ -41,6 +35,12 @@ class Artist
     first_hash = result[0]
     id = first_hash["id"]
     @id = id.to_i
+  end
+
+  def self.all()
+    sql = "SELECT * FROM artists;"
+    artists = SQLRunner.run(sql)
+    return artists.map { |artist| Artist.new(artist) }
   end
 
   def update()

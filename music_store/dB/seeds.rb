@@ -1,9 +1,11 @@
 require_relative( '../models/album.rb' )
 require_relative( '../models/artist.rb' )
+require_relative( '../models/inventory.rb' )
 require('pry')
 
 Artist.delete_all
 Album.delete_all
+Stock.delete_all
 
 artist1 = Artist.new( { 'name' => 'Alter Bridge' } )
 artist1.save()
@@ -64,6 +66,48 @@ album7 = Album.new({
   "genre" => "Djent"
   })
 album7.save()
+
+item1 = Stock.new({
+  'artist_id' => artist1.id,
+  'album_id' => album1.id
+})
+item1.save()
+
+item2 = Stock.new({
+  'artist_id' => artist1.id,
+  'album_id' => album2.id
+})
+item2.save()
+
+item3 = Stock.new({
+  'artist_id' => artist2.id,
+  'album_id' => album3.id
+})
+item3.save()
+
+item4 = Stock.new({
+  'artist_id' => artist3.id,
+  'album_id' => album4.id
+})
+item4.save()
+
+item5 = Stock.new({
+  'artist_id' => artist4.id,
+  'album_id' => album5.id
+})
+item5.save()
+
+item6 = Stock.new({
+  'artist_id' => artist4.id,
+  'album_id' => album6.id
+})
+item6.save()
+
+item7 = Stock.new({
+  'artist_id' => artist5.id,
+  'album_id' => album7.id
+})
+item7.save()
 
 binding.pry
 nil

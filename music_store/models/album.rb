@@ -1,8 +1,8 @@
-require_relative( '../db/sql_runner' )
+require_relative( '../dB/sql_runner' )
 
 class Album
 
-  attr_accessor :title, :quantity, :genre, :artist_id
+  attr_accessor :title, :quantity, :genre
   attr_reader :id
 
   def initialize(options)
@@ -10,7 +10,6 @@ class Album
     @title = options['title']
     @quantity = options['quantity']
     @genre = options['genre']
-    @artist_id = options['artist_id'].to_i unless options ["artist_id"].nil?
   end
 
   # def albums()
@@ -25,12 +24,6 @@ class Album
   #   return Artist.new(artist)
   # end
 
-  def self.all()
-    sql = "SELECT * FROM albums;"
-    albums = SQLRunner.run(sql)
-    return albums.map { |album| Album.new(album) }
-  end
-
   def save()
     sql =
     "
@@ -44,11 +37,17 @@ class Album
     @id = result[0]['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM albums;"
+    albums = SQLRunner.run(sql)
+    return albums.map { |hash| Album.new(hash) }
+  end
+
   def update()
     sql = "
       UPDATE albums
-      SET (title, quantity, genre, artist_id) =
-      ('#{@title}', #{@quantity}'#{@genre}', #{@artist_id})
+      SET (title, quantity, genre) =
+      ('#{@title}', #{@quantity}, '#{@genre}')
       WHERE id = #{@id}
     ;"
     result = SQLRunner.run(sql)
@@ -56,13 +55,19 @@ class Album
   end
 
   def delete()
-    sql = "DELETE FROM albums WHERE id = {@id}"
+    sql = "DELETE FROM albums WHERE id = {id}"
     SQLRunner.run(sql)
   end
 
   def self.delete_all
     sql = "DELETE FROM albums"
     SQLRunner.run(sql)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM albums WHERE id = #{id};"
+    result = SQLRunner.run(sql)
+    return Artist.new(result)
   end
 
 end
