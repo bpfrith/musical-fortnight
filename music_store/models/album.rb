@@ -19,11 +19,11 @@ class Album
   #   return albums.map { |order| Album.new(order) }
   # end
 
-  def artist()
-    sql = "SELECT * FROM artists WHERE id = {#artist_id};"
-    artist = SQLRunner.run(sql)
-    return Artist.new(artist)
-  end
+  # def artist()
+  #   sql = "SELECT * FROM artists WHERE id = {#artist_id};"
+  #   artist = SQLRunner.run(sql)
+  #   return Artist.new(artist)
+  # end
 
   def self.all()
     sql = "SELECT * FROM albums;"
