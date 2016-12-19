@@ -1,0 +1,28 @@
+<h1>Inventroy</h1>
+
+<table>
+  <tr>
+    <th>Artist</th>
+    <th></th>
+    <th>Title</th>
+    <th></th>
+    <th>Quantity</th>
+    <th></th>
+    <th>Genre</th>
+  </tr>
+  <% for artist in @artists do %>
+  <tr>
+    <td><%= artist.name %></td>
+  </tr>
+  <% end %>
+  </tr>
+  <% for album in @albums do %>
+  <tr>
+    <td><%= album.title %></td>
+    <td>|</td>
+    <td><%= album.quantity %></td>
+    <td>|</td>
+    <td><%= album.genre %></td>
+  </tr>
+  <% end %>
+</table>

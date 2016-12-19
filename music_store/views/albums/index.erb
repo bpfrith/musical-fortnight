@@ -8,13 +8,13 @@
     <th></th>
     <th>Genre</th>
   </tr>
-  <% for album in @albums %>
+  <% for album in @albums do %>
   <tr>
     <td><%= album.title %></td>
     <td>|</td>
     <td><%= album.quantity %></td>
     <td>|</td>
-    <td><%= albume.genre %></td>
+    <td><%= album.genre %></td>
   </tr>
   <% end %>
 </table>

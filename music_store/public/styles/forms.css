@@ -1,6 +1,6 @@
 input[type="submit"] {
   text-transform: uppercase;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Kreon', cursive;
 }
 
 select {
@@ -8,7 +8,7 @@ select {
  padding: 5px 35px 5px 5px;
  font-size: 0.8em;
  -webkit-appearance: none;
- background: url('/images/hazard.png') 96% / 15% no-repeat papayawhip;
+ background: url('/images/78_record.png') 96% / 15% no-repeat black;
  font-family: 'Merriweather', serif;
  border: 1px solid #eee;
 } 
