@@ -1,6 +1,6 @@
 require_relative( '../models/album.rb' )
 require_relative( '../models/artist.rb' )
-# require_relative( '../models/inventory.rb' )
+require_relative( '../models/inventory.rb' )
 require('pry')
 
 Artist.delete_all
@@ -67,47 +67,47 @@ album7 = Album.new({
   })
 album7.save()
 
-# item1 = Inventory.new({
-#   'artist_id' => artist1.id,
-#   'album_id' => album1.id
-# })
-# item1.save()
+item1 = Inventory.new({
+  'artist_id' => artist1.id,
+  'album_id' => album1.id
+})
+item1.save()
 
-# item2 = Inventory.new({
-#   'artist_id' => artist1.id,
-#   'album_id' => album2.id
-# })
-# item2.save()
+item2 = Inventory.new({
+  'artist_id' => artist1.id,
+  'album_id' => album2.id
+})
+item2.save()
 
-# item3 = Inventory.new({
-#   'artist_id' => artist2.id,
-#   'album_id' => album3.id
-# })
-# item3.save()
+item3 = Inventory.new({
+  'artist_id' => artist2.id,
+  'album_id' => album3.id
+})
+item3.save()
 
-# item4 = Inventory.new({
-#   'artist_id' => artist3.id,
-#   'album_id' => album4.id
-# })
-# item4.save()
+item4 = Inventory.new({
+  'artist_id' => artist3.id,
+  'album_id' => album4.id
+})
+item4.save()
 
-# item5 = Inventory.new({
-#   'artist_id' => artist4.id,
-#   'album_id' => album5.id
-# })
-# item5.save()
+item5 = Inventory.new({
+  'artist_id' => artist4.id,
+  'album_id' => album5.id
+})
+item5.save()
 
-# item6 = Inventory.new({
-#   'artist_id' => artist4.id,
-#   'album_id' => album6.id
-# })
-# item6.save()
+item6 = Inventory.new({
+  'artist_id' => artist4.id,
+  'album_id' => album6.id
+})
+item6.save()
 
-# item7 = Inventory.new({
-#   'artist_id' => artist5.id,
-#   'album_id' => album7.id
-# })
-# item7.save()
+item7 = Inventory.new({
+  'artist_id' => artist5.id,
+  'album_id' => album7.id
+})
+item7.save()
 
 binding.pry
 nil
