@@ -1,8 +1,8 @@
-equire( 'sinatra' )
+require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-require_relative( '../models/zombie.rb' )
+require_relative( '../models/album.rb' )
 
 get '/albums' do
   @albums = Album.all()
-  erb ( :"album/index" )
+  erb ( :"albums/index" )
 end
