@@ -8,6 +8,12 @@
     <th>Quantity</th>
     <th></th>
     <th>Genre</th>
+    <th></th>
+    <th>Buy Price</th>
+    <th></th>
+    <th>Sell Price</th>
+    <th></th>
+    <th>Mark Up</th>
   </tr>
   <% for album in @albums do %>
   <tr>
@@ -16,6 +22,12 @@
     <td><%= album.quantity %></td>
     <td>|</td>
     <td><%= album.genre %></td>
+    <td>|</td>
+    <td>£<%= album.buy_price %></td>
+    <td>|</td>
+    <td>£<%= album.sell_price %></td>
+    <td>|</td>
+    <td>£<%= album.mark_up %></td>
   </tr>
   <% end %>
 </table>

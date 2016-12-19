@@ -21,49 +21,63 @@ artist5.save()
 album1 = Album.new({
   "title" => "One Day Remains",
   "quantity" => 1,
-  "genre" => "Alternative Rock"
+  "genre" => "Alternative Rock",
+  "buy_price" => 5,
+  "sell_price" => 7
   })
 album1.save()
 
 album2 = Album.new({
   "title" => "Blackbird",
   "quantity" => 3,
-  "genre" => "Alternative Rock"
+  "genre" => "Alternative Rock",
+  "buy_price" => 5,
+  "sell_price" => 7
   })
 album2.save()
 
 album3 = Album.new({
   "title" => "Acendency",
   "quantity" => 2,
-  "genre" => "Heavy Metal"
+  "genre" => "Heavy Metal",
+  "buy_price" => 5,
+  "sell_price" => 7
   })
 album3.save()
 
 album4 = Album.new({
   "title" => "The Black Album",
   "quantity" => 2,
-  "genre" => "Metal"
+  "genre" => "Metal",
+  "buy_price" => 5,
+  "sell_price" => 7
   })
 album4.save()
 
 album5 = Album.new({
   "title" => "All Our Gods Have Abandond Us",
   "quantity" => 1,
-  "genre" => "Metalcore"
+  "genre" => "Metalcore",
+  "buy_price" => 5,
+  "sell_price" => 7
   })
 album5.save()
 
 album6 = Album.new({
   "title" => "Lost Together // Lost Forever",
   "quantity" => 1,
-  "genre" => "Metalcore"
+  "genre" => "Metalcore",
+  "buy_price" => 5,
+  "sell_price" => 7
   })
 album6.save()
 
 album7 = Album.new({
   "title" => "Everlasting",
   "quantity" => 1,
-  "genre" => "Djent"
+  "genre" => "Djent",
+  "buy_price" => 5,
+  "sell_price" => 7
   })
 album7.save()
 

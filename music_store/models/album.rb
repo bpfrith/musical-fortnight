@@ -2,15 +2,18 @@ require_relative( '../dB/sql_runner' )
 
 class Album
 
-  attr_accessor :title, :quantity, :genre
+  attr_accessor :title, :quantity, :genre, :buy_price, :sell_price , :mark_up
   attr_reader :id, :artist_id
 
   def initialize(options)
     @id = options['id'].to_i unless options['id'].nil?
     @artist_id = options['artist_id']
     @title = options['title']
-    @quantity = options['quantity']
+    @quantity = options['quantity'].to_i
     @genre = options['genre']
+    @buy_price = options['buy_price'].to_i
+    @sell_price = options['sell_price'].to_i
+    @mark_up = @sell_price - @buy_price #options['mark_up'].to_i
   end
 
   def albums()
@@ -29,9 +32,9 @@ class Album
     sql =
     "
     INSERT INTO albums
-    (title, quantity, genre)
+    (title, quantity, genre, buy_price, sell_price)
     VALUES
-    ('#{@title}', #{@quantity}, '#{@genre}')
+    ('#{@title}', #{@quantity}, '#{@genre}', #{@buy_price}, #{@sell_price})
     RETURNING *;
     "
     result = SQLRunner.run(sql)
@@ -47,8 +50,8 @@ class Album
   def update()
     sql = "
       UPDATE albums
-      SET (title, quantity, genre) =
-      ('#{@title}', #{@quantity}, '#{@genre}')
+      SET (title, quantity, genre, buy_price, sell_price, mark_up) =
+      ('#{@title}', #{@quantity}, '#{@genre}', #{@buy_price}, #{@sell_price}, #{@mark_up})
       WHERE id = #{@id}
     ;"
     result = SQLRunner.run(sql)
@@ -70,5 +73,10 @@ class Album
     result = SQLRunner.run(sql)
     return Artist.new(result)
   end
+
+  # def calc_mark_up()
+  #   @mark_up = @sell_price - @buy_price
+  #   update()
+  # end
 
 end

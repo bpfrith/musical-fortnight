@@ -10,6 +10,9 @@ CREATE TABLE albums (
   title VARCHAR(255),
   quantity INT8,
   genre VARCHAR(255),
+  buy_price DECIMAL(3,2),
+  sell_price DECIMAL(3,2),
+  mark_up DECIMAL(3,2)
 );
 
 CREATE TABLE inventory
