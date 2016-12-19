@@ -3,26 +3,27 @@ require_relative( '../dB/sql_runner' )
 class Album
 
   attr_accessor :title, :quantity, :genre
-  attr_reader :id
+  attr_reader :id, :artist_id
 
   def initialize(options)
     @id = options['id'].to_i unless options['id'].nil?
+    @artist_id = options['artist_id']
     @title = options['title']
     @quantity = options['quantity']
     @genre = options['genre']
   end
 
-  # def albums()
-  #   sql = "SELECT * FROM albums WHERE artist_id = #{@id};"
-  #   albums = SQLRunner.run(sql)
-  #   return albums.map { |order| Album.new(order) }
-  # end
+  def albums()
+    sql = "SELECT * FROM albums WHERE artist_id = #{@id};"
+    albums = SQLRunner.run(sql)
+    return albums.map { |order| Album.new(order) }
+  end
 
-  # def artist()
-  #   sql = "SELECT * FROM artists WHERE id = {#artist_id};"
-  #   artist = SQLRunner.run(sql)
-  #   return Artist.new(artist)
-  # end
+  def artist()
+    sql = "SELECT * FROM artists WHERE id = {#artist_id};"
+    artist = SQLRunner.run(sql)
+    return Artist.new(artist)
+  end
 
   def save()
     sql =

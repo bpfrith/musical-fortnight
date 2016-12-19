@@ -3,26 +3,16 @@
 <table>
   <tr>
     <th>Artist</th>
-    <th></th>
     <th>Title</th>
-    <th></th>
     <th>Quantity</th>
-    <th></th>
     <th>Genre</th>
   </tr>
-  <% for artist in @artists do %>
+  <% for inventory in @inventory do %>
   <tr>
-    <td><%= artist.name %></td>
-  </tr>
-  <% end %>
-  </tr>
-  <% for album in @albums do %>
-  <tr>
-    <td><%= album.title %></td>
-    <td>|</td>
-    <td><%= album.quantity %></td>
-    <td>|</td>
-    <td><%= album.genre %></td>
+    <td><%= inventory.artist().name() %></td>
+    <td><%= inventory.album().title() %></td>
+    <td><%= inventory.album().quantity() %></td>
+    <td><%= inventory.album().genre() %></td>
   </tr>
   <% end %>
 </table>

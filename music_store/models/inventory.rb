@@ -1,6 +1,6 @@
 require_relative( '../dB/sql_runner' )
 
-class Stock
+class Inventory
 
   attr_reader( :artist_id, :album_id, :id )
 
@@ -11,7 +11,7 @@ class Stock
   end
 
   def save()
-    sql = "INSERT INTO stock (
+    sql = "INSERT INTO inventory (
       artist_id, album_id
     ) VALUES (
       '#{ @artist_id }',#{ @album_id }
@@ -21,36 +21,30 @@ class Stock
   end
 
   def self.all()
-    sql = "SELECT * FROM stock"
+    sql = "SELECT * FROM inventory"
     results = SQLRunner.run( sql )
-    return results.map { |hash| stock.new( hash ) }
+    return results.map { |hash| Inventory.new( hash ) }
   end
 
   def artist()
-    sql = "SELECT * FROM artists a
-          INNER JOIN stock s
-          ON s.album_id = a.id
-          WHERE a.id = #{@artist_id}"
+    sql = "SELECT * FROM artists WHERE artists.id = #{@artist_id}"
     results = SQLRunner.run( sql )
     return Artist.new( results.first )
   end
 
-  def album
-    sql = "SELECT * FROM albums b
-          INNER JOIN stock s
-          ON s.album_id = b.id
-          WHERE b.id = #{@album_id}"
+  def album()
+    sql = "SELECT * FROM albums WHERE albums.id = #{@album_id}"
     results = SQLRunner.run( sql )
     return Album.new( results.first )
   end
 
   def self.delete_all
-    sql = "DELETE FROM stock"
+    sql = "DELETE FROM inventory"
     SQLRunner.run( sql )
   end
 
   def self.destroy(id)
-    sql = "DELETE FROM stock where id = #{id}"
+    sql = "DELETE FROM inventory where id = #{id}"
     SQLRunner.run( sql )
   end
 

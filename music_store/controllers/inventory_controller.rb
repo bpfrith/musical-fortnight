@@ -6,7 +6,7 @@ require_relative( '../models/artist.rb' )
 require_relative( '../models/album.rb' )
 
 get '/inventory' do
-  @stock = Stock.all
+  @inventory = Inventory.all
   erb ( :"inventory/index" )
 end
 
@@ -17,12 +17,12 @@ get '/inventory/new' do
 end
 
 post '/inventory' do
-  item = Stock.new(params)
+  item = Inventory.new(params)
   item.save
   redirect to("/inventory")
 end
 
 post '/inventory/:id/delete' do
-  Stock.delete(params[:id])
+  Inventory.delete(params[:id])
   redirect to("/inventory")
 end
