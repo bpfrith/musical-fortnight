@@ -80,21 +80,21 @@ class Album
   #   update()
   # end
 
-  # def stock_level()
-  #   if @quantity < 3 then
-  #     @stock_level = "Low"
-  #   elseif @quantity 3..5 then
-  #     @stock_level = "Medium"
-  #   elseif @quantity >= 6 then
-  #     @stock_level = "High"
-  #   else @stock_level = "Invalid"
-  #   end
+  def stock_level()
+    if @quantity >= 6
+      @stock_level = "High"
+    elsif @quantity >= 3 && @quantity <= 5
+      @stock_level = "Medium"
+    else @quantity <= 3
+      @stock_level = "Low"
+    # else @stock_level = "Invalid"
+    end
     # case @quantity
-    #   when < 3 then @stock_level = "Low"
+    #   when 0..2 then @stock_level = "Low"
     #   when 3..5 then @stock_level = "Medium"
-    #   when >= 6 then @stock_level = "High"
+    #   when 6..100 then @stock_level = "High"
     #   else "Invalid"
     # end
-  # end
+  end
 
 end
