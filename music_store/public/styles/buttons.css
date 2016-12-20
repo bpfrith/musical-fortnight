@@ -5,14 +5,14 @@
   padding: 6px 6px;
   color: black;
   cursor:pointer;
-  font-family: 'Special Elite', helvetica;
+  font-family: helvetica;
 }
 
-.btn--danger {
+.btn--delete {
   background-color: #FF0000;
 }
 
-.btn--danger:hover {
+.btn--delete:hover {
   background-color: #CC0000;
 }
 
@@ -30,18 +30,8 @@
 
 .btn--new{
   background-color: #0687f5;
-  position:absolute;
-  bottom: 5%;
-  right:20%;
 }
 
 .btn--new:hover {
   background-color: #0000FF;
-}
-
-.btn--delete_album{
-  position:absolute;
-  bottom: 5%;
-  right:20%;
-  text-align:center;
 }

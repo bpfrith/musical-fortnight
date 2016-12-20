@@ -16,6 +16,8 @@
     <th>Mark Up</th>
     <th></th>
     <th>Stock Level</th>
+    <th></th>
+    <th></th>
   </tr>
   <% for album in @albums do %>
   <tr>
@@ -32,9 +34,16 @@
     <td>£<%= album.mark_up %></td>
     <td>|</td>
     <td><%= album.stock_level %></td>
+    <td>|</td>
+    <td><p>
+      <form action="/albums/<%= album.id %>/delete" method="POST">
+        <input class="btn btn--delete" type="submit" value="delete" />
+      </form>
+    </p>
+    </td>
   </tr>
   <% end %>
 </table>
 <p class="btn--wrapper">
-  <a class="btn btn--new_album" href="/artist/new">New Album</a>
+  <a class="btn btn--new" href="/albums/new">New Album</a> <a class="btn btn--new" href="/albums/order">Order Albums</a>
 </p>

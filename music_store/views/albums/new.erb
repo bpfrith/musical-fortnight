@@ -1,17 +1,22 @@
-<a href = "/"><h1>Marks Majik Musical Minagerie</h1></a>
+<a href = "/"><h1>Marks Majik Musical Menagerie</h1></a>
 <h2>New Album</h2>
 
-<form action="/artists" method="post">
+<form action="/albums" method="post">
   <p>
     <form>
-      <p>Name of new Album: <input type="text"></p>
-      <p>Quantity of Album: <input type="text"></p>
-      <p>Genre: <input type="text"></p>
-      <p>Buy price: <input type="text"></p>
-      <p>Sell price: <input type="text"></p>
+      <p>Name of Artist: <label>
+      <select name="artist_id">
+        <% for name in @name %>
+        <option value="<%= artist.id %>"><%= artist.name %></option>
+        <% end %>
+      </select>
+    </label></p>
+      <p>Title of new Album: <input type="text" name="title"></p>
+      <p>Quantity of Album: <input type="text" name="quantity"> </p>
+      <p>Genre: <input type="text" name="genre"></p>
+      <p>Buy price: <input type="text" name="buy_price"></p>
+      <p>Sell price: <input type="text" name="sell_price"></p>
       <input type="submit">
     </form>
   </p>
-
-  <input class="btn btn--new" type='submit' value="Add">
 </form>

@@ -54,13 +54,13 @@ class Artist
     return result
   end
 
-  def delete()
-    sql = "DELETE FROM artists WHERE id = {@id}"
+  def self.delete(id)
+    sql = "DELETE FROM artists WHERE id = #{id};"
     SQLRunner.run(sql)
   end
 
   def self.delete_all()
-    sql = "DELETE FROM artists"
+    sql = "DELETE FROM artists;"
     SQLRunner.run(sql)
   end
 

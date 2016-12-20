@@ -15,10 +15,10 @@ end
 post '/artists' do
   artist = Artist.new(params)
   artist.save
-  redirect to("/artist")
+  redirect to("/artists")
 end
 
 post '/artists/:id/delete' do
   Artist.delete(params[:id])
-  redirect to("/artist")
+  redirect to("/artists")
 end

@@ -8,7 +8,7 @@
     <td>
     <p>
       <form action="/artists/<%= artist.id %>/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="delete" />
+        <input class="btn btn--delete" type="submit" value="delete" />
       </form>
     </p>
     </td>
@@ -16,5 +16,5 @@
     <% end %>
   </table>
   <p class="btn--wrapper">
-    <a class="btn btn--new_artist" href="/artists/new">New Artist</a>
+    <a class="btn btn--new" href="/artists/new">New Artist</a>
   </p>

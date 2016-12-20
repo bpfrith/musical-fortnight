@@ -59,13 +59,13 @@ class Album
     return result
   end
 
-  def delete()
-    sql = "DELETE FROM albums WHERE id = {id}"
+  def self.delete(id)
+    sql = "DELETE FROM albums WHERE id = {id};"
     SQLRunner.run(sql)
   end
 
   def self.delete_all
-    sql = "DELETE FROM albums"
+    sql = "DELETE FROM albums;"
     SQLRunner.run(sql)
   end
 
