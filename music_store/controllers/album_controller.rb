@@ -35,8 +35,8 @@ end
 
 post '/albums/order' do
   album = Album.find(params[:id])
-  album.quantity = params[:quantity]
-  album.update_quantity
+  album.quantity += params[:quantity].to_i
+  album.update
 
   redirect to("/albums")
 end
