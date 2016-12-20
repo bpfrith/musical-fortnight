@@ -2,7 +2,7 @@ require_relative( '../dB/sql_runner' )
 
 class Album
 
-  attr_accessor :title, :quantity, :genre, :buy_price, :sell_price , :mark_up
+  attr_accessor :title, :quantity, :genre, :buy_price, :sell_price , :mark_up, :stock_level
   attr_reader :id, :artist_id
 
   def initialize(options)
@@ -14,6 +14,7 @@ class Album
     @buy_price = options['buy_price'].to_i
     @sell_price = options['sell_price'].to_i
     @mark_up = @sell_price - @buy_price #options['mark_up'].to_i
+    @stock_level = options['stock_level']
   end
 
   def albums()
@@ -77,6 +78,23 @@ class Album
   # def calc_mark_up()
   #   @mark_up = @sell_price - @buy_price
   #   update()
+  # end
+
+  # def stock_level()
+  #   if @quantity < 3 then
+  #     @stock_level = "Low"
+  #   elseif @quantity 3..5 then
+  #     @stock_level = "Medium"
+  #   elseif @quantity >= 6 then
+  #     @stock_level = "High"
+  #   else @stock_level = "Invalid"
+  #   end
+    # case @quantity
+    #   when < 3 then @stock_level = "Low"
+    #   when 3..5 then @stock_level = "Medium"
+    #   when >= 6 then @stock_level = "High"
+    #   else "Invalid"
+    # end
   # end
 
 end

@@ -12,7 +12,8 @@ CREATE TABLE albums (
   genre VARCHAR(255),
   buy_price DECIMAL(3,2),
   sell_price DECIMAL(3,2),
-  mark_up DECIMAL(3,2)
+  mark_up DECIMAL(3,2),
+  stock_level VARCHAR(255)
 );
 
 CREATE TABLE inventory

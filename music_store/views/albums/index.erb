@@ -1,5 +1,5 @@
 <a href = "/"><h1>Marks Majik Musical Minagerie</h1></a>
-<h1>Albums</h1>
+<h2>Albums</h2>
 
 <table>
   <tr>
@@ -14,6 +14,8 @@
     <th>Sell Price</th>
     <th></th>
     <th>Mark Up</th>
+    <th></th>
+    <th>Stock Level</th>
   </tr>
   <% for album in @albums do %>
   <tr>
@@ -28,6 +30,11 @@
     <td>£<%= album.sell_price %></td>
     <td>|</td>
     <td>£<%= album.mark_up %></td>
+    <td>|</td>
+    <td><%= album.stock_level %></td>
   </tr>
   <% end %>
 </table>
+<p class="btn--wrapper">
+  <a class="btn btn--new_album" href="/artist/new">New Album</a>
+</p>

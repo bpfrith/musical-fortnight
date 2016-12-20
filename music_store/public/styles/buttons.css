@@ -1,28 +1,47 @@
 .btn {
+  width:120px;
   border:0px none;
   border-radius: 3%;
-  padding: 8px 12px;
-  color: papayawhip;
+  padding: 6px 6px;
+  color: black;
   cursor:pointer;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Special Elite', helvetica;
 }
 
 .btn--danger {
-  background-color: darkred;
+  background-color: #FF0000;
 }
 
 .btn--danger:hover {
-  background-color: #730000;
-}
-
-.btn--action:hover {
-  background-color: #495C27;
-}
-
-.btn--action {
-  background-color: darkolivegreen;
+  background-color: #CC0000;
 }
 
 .btn--wrapper {
-  margin: 0px 0px 30px 0px;
+  margin: 0px 0px 0px 0px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--row {
+  flex-direction: row;
+}
+
+.btn--new{
+  background-color: #0687f5;
+  position:absolute;
+  bottom: 5%;
+  right:20%;
+}
+
+.btn--new:hover {
+  background-color: #0000FF;
+}
+
+.btn--delete_album{
+  position:absolute;
+  bottom: 5%;
+  right:20%;
+  text-align:center;
 }

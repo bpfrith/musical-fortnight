@@ -1,16 +1,16 @@
 input[type="submit"] {
   text-transform: uppercase;
-  font-family: 'Kreon', cursive;
+  font-family: helvetica;
 }
 
 select {
  width: 150px;
- padding: 5px 35px 5px 5px;
- font-size: 0.8em;
+ padding: 0px 0px 0px 0px;
+ font-size: 1.0em;
  -webkit-appearance: none;
- background: url('/images/78_record.png') 96% / 15% no-repeat black;
- font-family: 'Merriweather', serif;
- border: 1px solid #eee;
+ background: url('/images/78_record.png') 5% / 85% no-repeat black;
+ font-family: helvetica;
+ border: 0px solid #eee;
 } 
 
 :focus {
