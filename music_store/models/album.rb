@@ -2,7 +2,7 @@ require_relative( '../dB/sql_runner' )
 
 class Album
 
-  attr_accessor :title, :quantity, :genre, :buy_price, :sell_price , :mark_up, :stock_level
+  attr_accessor :title, :quantity, :genre, :buy_price, :sell_price , :mark_up, :stock_level, :albums_sold
   attr_reader :id, :artist_id
 
   def initialize(options)
@@ -15,6 +15,7 @@ class Album
     @sell_price = options['sell_price'].to_i
     @mark_up = @sell_price - @buy_price #options['mark_up'].to_i
     @stock_level = options['stock_level']
+    @albums_sold = options['albums_sold'].to_i
   end
 
   def albums()
@@ -51,8 +52,8 @@ class Album
   def update()
     sql = "
       UPDATE albums
-      SET (title, quantity, genre, buy_price, sell_price, mark_up) =
-      ('#{@title}', #{@quantity}, '#{@genre}', #{@buy_price}, #{@sell_price}, #{@mark_up})
+      SET (title, quantity, genre, buy_price, sell_price, mark_up, albums_sold) =
+      ('#{@title}', #{@quantity}, '#{@genre}', #{@buy_price}, #{@sell_price}, #{@mark_up}, #{@albums_sold})
       WHERE id = #{@id}
     ;"
     result = SQLRunner.run(sql)

@@ -16,7 +16,8 @@ CREATE TABLE albums (
   buy_price DECIMAL(3,2),
   sell_price DECIMAL(3,2),
   mark_up DECIMAL(3,2),
-  stock_level VARCHAR(255)
+  stock_level VARCHAR(255),
+  albums_sold INT8
 );
 
 CREATE TABLE inventory

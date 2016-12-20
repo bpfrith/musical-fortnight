@@ -17,6 +17,8 @@
     <th></th>
     <th>Stock Level</th>
     <th></th>
+    <th>Albums Sold</th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -36,6 +38,8 @@
     <td>£<%= album.mark_up %></td>
     <td>|</td>
     <td><%= album.stock_level %></td>
+    <td>|</td>
+    <td><%= album.albums_sold %></td>
     <td>|</td>
     <td><p>
       <form action="/albums/<%= album.id %>/sell" method="POST">

@@ -46,6 +46,7 @@ post '/albums/:id/sell' do
   # redirect to("/albums")
   album = Album.find(params[:id])
   album.quantity -= 1
+  album.albums_sold += 1
   album.update
   redirect to("/albums")
 end
