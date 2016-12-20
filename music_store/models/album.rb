@@ -24,8 +24,8 @@ class Album
   end
 
   def artist()
-    sql = "SELECT * FROM artists WHERE id = {#artist_id};"
-    artist = SQLRunner.run(sql)
+    sql = "SELECT * FROM artists WHERE id = #{@artist_id};"
+    artist = SQLRunner.run(sql).first
     return Artist.new(artist)
   end
 
@@ -33,9 +33,9 @@ class Album
     sql =
     "
     INSERT INTO albums
-    (title, quantity, genre, buy_price, sell_price)
+    (artist_id, title, quantity, genre, buy_price, sell_price)
     VALUES
-    ('#{@title}', #{@quantity}, '#{@genre}', #{@buy_price}, #{@sell_price})
+    (#{artist_id}, '#{@title}', #{@quantity}, '#{@genre}', #{@buy_price}, #{@sell_price})
     RETURNING *;
     "
     result = SQLRunner.run(sql)

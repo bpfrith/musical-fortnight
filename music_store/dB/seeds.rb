@@ -19,6 +19,7 @@ artist5 = Artist.new( { 'name' => 'Any Given Day' } )
 artist5.save()
 
 album1 = Album.new({
+  "artist_id" => artist1.id,
   "title" => "One Day Remains",
   "quantity" => 1,
   "genre" => "Alternative Rock",
@@ -28,6 +29,7 @@ album1 = Album.new({
 album1.save()
 
 album2 = Album.new({
+  "artist_id" => artist1.id,
   "title" => "Blackbird",
   "quantity" => 3,
   "genre" => "Alternative Rock",
@@ -37,6 +39,7 @@ album2 = Album.new({
 album2.save()
 
 album3 = Album.new({
+  "artist_id" => artist2.id,
   "title" => "Acendency",
   "quantity" => 2,
   "genre" => "Heavy Metal",
@@ -46,6 +49,7 @@ album3 = Album.new({
 album3.save()
 
 album4 = Album.new({
+  "artist_id" => artist3.id,
   "title" => "The Black Album",
   "quantity" => 2,
   "genre" => "Metal",
@@ -55,6 +59,7 @@ album4 = Album.new({
 album4.save()
 
 album5 = Album.new({
+  "artist_id" => artist4.id,
   "title" => "All Our Gods Have Abandond Us",
   "quantity" => 1,
   "genre" => "Metalcore",
@@ -64,6 +69,7 @@ album5 = Album.new({
 album5.save()
 
 album6 = Album.new({
+  "artist_id" => artist4.id,
   "title" => "Lost Together // Lost Forever",
   "quantity" => 1,
   "genre" => "Metalcore",
@@ -73,6 +79,7 @@ album6 = Album.new({
 album6.save()
 
 album7 = Album.new({
+  "artist_id" => artist5.id,
   "title" => "Everlasting",
   "quantity" => 1,
   "genre" => "Djent",

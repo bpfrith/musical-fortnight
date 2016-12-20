@@ -1,4 +1,6 @@
-DROP TABLE IF EXISTS inventory, albums, artists;
+DROP TABLE IF EXISTS inventory;
+DROP TABLE IF EXISTS albums;
+DROP TABLE IF EXISTS artists;
 
 CREATE TABLE artists (
 id SERIAL8 primary key,
@@ -7,6 +9,7 @@ name VARCHAR(255)
 
 CREATE TABLE albums (
   id SERIAL8 primary key,
+  artist_id INT8 references artists(id),
   title VARCHAR(255),
   quantity INT8,
   genre VARCHAR(255),

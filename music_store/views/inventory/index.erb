@@ -8,12 +8,12 @@
     <th>Quantity</th>
     <th>Genre</th>
   </tr>
-  <% for inventory in @inventory do %>
+  <% for album in @inventory do %>
   <tr>
-    <td><%= inventory.artist().name() %></td>
-    <td><%= inventory.album().title() %></td>
-    <td><%= inventory.album().quantity() %></td>
-    <td><%= inventory.album().genre() %></td>
+    <td><%= album.artist().name() %></td>
+    <td><%= album.title() %></td>
+    <td><%= album.quantity() %></td>
+    <td><%= album.genre() %></td>
   </tr>
   <% end %>
 </table>

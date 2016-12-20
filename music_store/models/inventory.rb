@@ -43,7 +43,7 @@ class Inventory
     SQLRunner.run( sql )
   end
 
-  def self.destroy(id)
+  def self.delete(id)
     sql = "DELETE FROM inventory where id = #{id}"
     SQLRunner.run( sql )
   end

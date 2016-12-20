@@ -6,7 +6,7 @@ require_relative( '../models/artist.rb' )
 require_relative( '../models/album.rb' )
 
 get '/inventory' do
-  @inventory = Inventory.all.sort { |item1, item2| item1.artist.name <=> item2.artist.name }
+  @inventory = Album.all().sort { |artist1, artist2| artist1.title <=> artist2.title }
   erb ( :"inventory/index" )
 end
 
