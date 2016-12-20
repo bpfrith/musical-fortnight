@@ -7,8 +7,6 @@ select {
  width: 150px;
  padding: 0px 0px 0px 0px;
  font-size: 1.0em;
- -webkit-appearance: none;
- /*background: url('/images/78_record.png') 5% / 85% no-repeat black;*/
  font-family: helvetica;
  border: 0px solid #eee;
 } 
