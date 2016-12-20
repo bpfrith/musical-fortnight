@@ -1,25 +1,25 @@
-<a href = "/"><h1>Marks Majik Musical Minagerie</h1></a>
+<a href = "/"><h1>Marks Majik Musical Menagerie</h1></a>
 <h2>Order Albums</h2>
 
-  <form action="/albums" method="post">
+  <form action="/albums/order" method="post">
     <p>
     Select an album:
     </p>
     <p>
       <label>
-        <select name="album_id">
+        <select name="id">
           <% for album in @albums %>
-          <option value="<%= album_id %>"><%= album.title %></option>
+          <option value="<%= album.id %>"><%= album.title %></option>
           <% end %>
         </select>
       </label>
     </p>
 
-    <form action="/albums" method="post">
+    
       <p>
-        <form>
+       
         Number of albums to order: <br>
-          <input type="" name="name" value="" <br>
+          <input type="INT8" name="quantity" value="" <br>
           <input type="submit">
-        </form>
+    </form>
       </p>

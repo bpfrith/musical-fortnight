@@ -1,4 +1,4 @@
-<a href = "/"><h1>Marks Majik Musical Minagerie</h1></a>
+<a href = "/"><h1>Marks Majik Musical Menagerie</h1></a>
 <h2>Albums</h2>
 
 <table>
@@ -18,6 +18,8 @@
     <th>Stock Level</th>
     <th></th>
     <th></th>
+    <th></th>
+    <th></th>
   </tr>
   <% for album in @albums do %>
   <tr>
@@ -34,6 +36,13 @@
     <td>£<%= album.mark_up %></td>
     <td>|</td>
     <td><%= album.stock_level %></td>
+    <td>|</td>
+    <td><p>
+      <form action="/albums/<%= album.id %>/sell" method="POST">
+        <input class="btn btn--update" type="submit" value="sell" />
+      </form>
+    </p>
+    </td>
     <td>|</td>
     <td><p>
       <form action="/albums/<%= album.id %>/delete" method="POST">

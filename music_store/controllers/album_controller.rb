@@ -13,8 +13,13 @@ get '/albums/new' do
 end
 
 get '/albums/order' do
-  @album = Album.all()
+  @albums = Album.all.sort { |album1, album2| album1.title <=> album2.title }
   erb ( :"albums/order" )
+end
+
+get '/albums/sell' do
+  @albums = Album.all.sort { |album1, album2| album1.title <=> album2.title }
+  erb ( :"albums/sell" )
 end
 
 post '/albums' do
@@ -28,8 +33,16 @@ post '/albums/:id/delete' do
   redirect to("/albums")
 end
 
-post '/albums/:id/order' do
-  album = Album.update(params[:id])
-  album.save
+post '/albums/order' do
+  album = Album.find(params[:id])
+  album.quantity = params[:quantity]
+  album.update_quantity
+
+  redirect to("/albums")
+end
+
+post '/albums/:id/sell' do
+  # album = Album.new(params[:id])
+  Album.sell
   redirect to("/albums")
 end

@@ -8,6 +8,14 @@
   font-family: helvetica;
 }
 
+.btn--update {
+  background-color: grey;
+}
+
+.btn--update:hover {
+  background-color: darkgrey;
+}
+
 .btn--delete {
   background-color: #FF0000;
 }

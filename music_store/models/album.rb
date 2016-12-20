@@ -60,7 +60,7 @@ class Album
   end
 
   def self.delete(id)
-    sql = "DELETE FROM albums WHERE id = {id};"
+    sql = "DELETE FROM albums WHERE id = #{id};"
     SQLRunner.run(sql)
   end
 
@@ -71,8 +71,16 @@ class Album
 
   def self.find(id)
     sql = "SELECT * FROM albums WHERE id = #{id};"
-    result = SQLRunner.run(sql)
-    return Artist.new(result)
+    result = SQLRunner.run(sql).first
+    return Album.new(result)
+  end
+
+  def sell()
+    if quantity > 0
+      quantity - 1
+    else
+      return "Order more"
+    end
   end
 
   # def calc_mark_up()
@@ -95,6 +103,17 @@ class Album
     #   when 6..100 then @stock_level = "High"
     #   else "Invalid"
     # end
+  end
+
+  def update_quantity()
+    sql = "
+      UPDATE albums
+      SET (quantity) =
+      (#{@quantity})
+      WHERE id = #{@id}
+    ;"
+    result = SQLRunner.run(sql)
+    return result
   end
 
 end
