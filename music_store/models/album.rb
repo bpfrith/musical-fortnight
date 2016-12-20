@@ -75,13 +75,10 @@ class Album
     return Album.new(result)
   end
 
-  def sell()
-    if quantity > 0
-      quantity - 1
-    else
-      return "Order more"
-    end
-  end
+  # def self.sell(id)
+  #   @quantity -= 1
+  #   update()
+  # end
 
   # def calc_mark_up()
   #   @mark_up = @sell_price - @buy_price
@@ -105,15 +102,15 @@ class Album
     # end
   end
 
-  def update_quantity()
-    sql = "
-      UPDATE albums
-      SET (quantity) =
-      (#{@quantity})
-      WHERE id = #{@id}
-    ;"
-    result = SQLRunner.run(sql)
-    return result
-  end
+  # def update_quantity()
+  #   sql = "
+  #     UPDATE albums
+  #     SET (quantity) =
+  #     (#{@quantity})
+  #     WHERE id = #{@id}
+  #   ;"
+  #   result = SQLRunner.run(sql)
+  #   return result
+  # end
 
 end
