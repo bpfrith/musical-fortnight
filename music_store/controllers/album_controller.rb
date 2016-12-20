@@ -1,19 +1,24 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/album.rb' )
+require_relative( '../public/images/links.rb' )
+
 
 get '/albums' do
   @albums = Album.all.sort { |album1, album2| album1.title <=> album2.title }
+  @corner_pic = Images.corner_pic()
   erb ( :"albums/index" )
 end
 
 get '/albums/new' do
   @artists = Artist.all.sort { |artist1, artist2| artist1.name <=> artist2.name }
+  @corner_pic = Images.corner_pic()
   erb ( :"albums/new" )
 end
 
 get '/albums/order' do
   @albums = Album.all.sort { |album1, album2| album1.title <=> album2.title }
+  @corner_pic = Images.corner_pic()
   erb ( :"albums/order" )
 end
 
