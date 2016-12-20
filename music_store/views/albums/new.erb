@@ -6,7 +6,7 @@
     <form>
       <p>Name of Artist: <label>
       <select name="artist_id">
-        <% for name in @name %>
+        <% for artist in @artists %>
         <option value="<%= artist.id %>"><%= artist.name %></option>
         <% end %>
       </select>

@@ -8,8 +8,8 @@
     <p>
       <label>
         <select name="album_id">
-          <% for title in @title %>
-          <option value="<%= album.id %>"><%= album.title %></option>
+          <% for album in @albums %>
+          <option value="<%= album_id %>"><%= album.title %></option>
           <% end %>
         </select>
       </label>

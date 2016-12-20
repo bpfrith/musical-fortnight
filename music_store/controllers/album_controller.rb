@@ -8,12 +8,12 @@ get '/albums' do
 end
 
 get '/albums/new' do
-  @album = Album.all().sort { |album1, album2| album1.title <=> album2.title }
+  @artists = Artist.all.sort { |artist1, artist2| artist1.name <=> artist2.name }
   erb ( :"albums/new" )
 end
 
 get '/albums/order' do
-  @album = Album.all().sort { |album1, album2| album1.title <=> album2.title }
+  @album = Album.all()
   erb ( :"albums/order" )
 end
 
