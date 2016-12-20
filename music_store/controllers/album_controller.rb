@@ -45,8 +45,12 @@ post '/albums/:id/sell' do
   # Album.sell(params[:id])
   # redirect to("/albums")
   album = Album.find(params[:id])
-  album.quantity -= 1
-  album.albums_sold += 1
-  album.update
-  redirect to("/albums")
+  if album.quantity > 0
+    album.quantity -= 1
+    album.albums_sold += 1
+    album.update
+    redirect to("/albums")
+  else
+    redirect to("/albums")
+  end
 end
