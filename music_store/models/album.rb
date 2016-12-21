@@ -13,7 +13,7 @@ class Album
     @genre = options['genre']
     @buy_price = options['buy_price'].to_i
     @sell_price = options['sell_price'].to_i
-    @mark_up = @sell_price - @buy_price #options['mark_up'].to_i
+    @mark_up = @sell_price - @buy_price
     @stock_level = options['stock_level']
     @albums_sold = options['albums_sold'].to_i
   end
@@ -76,16 +76,6 @@ class Album
     return Album.new(result)
   end
 
-  # def self.sell(id)
-  #   @quantity -= 1
-  #   update()
-  # end
-
-  # def calc_mark_up()
-  #   @mark_up = @sell_price - @buy_price
-  #   update()
-  # end
-
   def stock_level()
     if @quantity >= 6
       @stock_level = "High"
@@ -93,25 +83,7 @@ class Album
       @stock_level = "Medium"
     else @quantity <= 3
       @stock_level = "Low"
-    # else @stock_level = "Invalid"
     end
-    # case @quantity
-    #   when 0..2 then @stock_level = "Low"
-    #   when 3..5 then @stock_level = "Medium"
-    #   when 6..100 then @stock_level = "High"
-    #   else "Invalid"
-    # end
   end
-
-  # def update_quantity()
-  #   sql = "
-  #     UPDATE albums
-  #     SET (quantity) =
-  #     (#{@quantity})
-  #     WHERE id = #{@id}
-  #   ;"
-  #   result = SQLRunner.run(sql)
-  #   return result
-  # end
 
 end

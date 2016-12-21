@@ -10,18 +10,6 @@ class Artist
     @name = options['name']
   end
 
-  # def albums()
-  #   sql = "SELECT * FROM albums WHERE artist_id = #{id};"
-  #   albums = SQLRunner.run(sql)
-  #   return albums.map { |album| Album.new(album) }
-  # end
-
-  # def album_titles()
-  #   sql = "SELECT album.title WHERE artist_id = #{id};"
-  #   albums = SQLRunner.run(sql)
-  #   return albums.map { |album| Album.new(album) }
-  # end
-
   def save()
     sql =
     "
